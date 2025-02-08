@@ -59,6 +59,14 @@
     <script src="script.js"></script>
     <script>
       document.getElementById("bgMusic").play();
+      
+const bgMusic = document.getElementById("bgMusic");
+const button = document.getElementById("valentinesButton");
+
+button.addEventListener("click", () => {
+    bgMusic.play().catch(err => console.log("Playback error:", err));
+    // Additional actions can go here...
+});
 
     </script>
   </body>
