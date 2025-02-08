@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="public/images/favicon.png" type="image/x-icon" />
-    <title>Propose Day </title>
+    <title>Propose Day</title>
     <link rel="stylesheet" href="public/style.css" />
     <style>
       /* Additional styles for the thank you message overlay */
@@ -41,33 +41,41 @@
     </style>
   </head>
   <body>
-    <canvas id="starfield"></canvas>
+    <!-- Added willReadFrequently for potential canvas optimization -->
+    <canvas id="starfield" willReadFrequently></canvas>
     <button id="valentinesButton">If Yes Click Me! ❤</button>
     
     <!-- Thank You Message Overlay (hidden by default) -->
     <div id="thankYouMessage">
       <h1>Thank You, My Love!</h1>
-      <p>You are my greatest blessing eternal joy for entire life.</p>
+      <p>You are my greatest blessing, eternal joy for my entire life.</p>
     </div>
     
-    <!-- Background Music (Replace the source with your preferred Bollywood romantic song) -->
-    <audio id="bgMusic"  loop>
-      <source src="https://proskylord69.github.io/propose-day/public/music.mp3"  type="audio/mp3">
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+      <source src="https://proskylord69.github.io/propose-day/public/music.mp3" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
     
+    <!-- External script (e.g., for starfield animation) -->
     <script src="script.js"></script>
+    
+    <!-- Inline script for button interaction -->
     <script>
-      document.getElementById("bgMusic").play();
-      
-const bgMusic = document.getElementById("bgMusic");
-const button = document.getElementById("valentinesButton");
+      // Removed auto-play on page load to satisfy browser user-interaction policies.
+      // Instead, we play the music when the user clicks the button.
 
-button.addEventListener("click", () => {
-    bgMusic.play().catch(err => console.log("Playback error:", err));
-    // Additional actions can go here...
-});
+      // Use unique variable names (e.g., inlineBgMusic and inlineButton) to avoid conflicts.
+      const inlineBgMusic = document.getElementById("bgMusic");
+      const inlineButton = document.getElementById("valentinesButton");
 
+      inlineButton.addEventListener("click", () => {
+          inlineBgMusic.play().catch(err => console.log("Playback error:", err));
+          // Show the thank you message:
+          document.getElementById("thankYouMessage").style.opacity = "1";
+          // Optionally hide the button after it's clicked:
+          inlineButton.style.display = "none";
+      });
     </script>
   </body>
 </html>
