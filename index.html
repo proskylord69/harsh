@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="public/images/favicon.png" type="image/x-icon" />
+    <title>Propose Day </title>
+    <link rel="stylesheet" href="public/style.css" />
+    <style>
+      /* Additional styles for the thank you message overlay */
+      #thankYouMessage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-family: 'Comic Sans MS', cursive;
+        text-align: center;
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+      }
+      /* Style the button to sit at the bottom center */
+      #valentinesButton {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #ff4081;
+        color: white;
+        z-index: 1001;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="starfield"></canvas>
+    <button id="valentinesButton">If Yes Click Me! ❤</button>
+    
+    <!-- Thank You Message Overlay (hidden by default) -->
+    <div id="thankYouMessage">
+      <h1>Thank You, My Love!</h1>
+      <p>You are my greatest blessing eternal joy for entire life.</p>
+    </div>
+    
+    <!-- Background Music (Replace the source with your preferred Bollywood romantic song) -->
+    <audio id="bgMusic"  loop>
+      <source src="../propose-day/public/music.mp3"  type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    
+    <script src="script.js"></script>
+    <script>
+      document.getElementById("bgMusic").play();
+
+    </script>
+  </body>
+</html>
